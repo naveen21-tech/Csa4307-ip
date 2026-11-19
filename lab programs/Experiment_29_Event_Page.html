@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TechSpark Summit 2026 – Event Page</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 "Segoe UI",Arial,sans-serif;color:#1a2332}
+h1,h2,h3{margin:0}
+.top{background:#0b1736;color:#fff;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;flex-wrap:wrap;gap:8px}
+.top b{font-size:20px;letter-spacing:1px}.top a{color:#cdd8f5;text-decoration:none;margin-left:18px;font-size:14px}
+.btn{display:inline-block;background:#ff7a1a;color:#fff;border:0;border-radius:10px;padding:14px 30px;font:700 16px "Segoe UI",Arial;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(255,122,26,.4)}.btn:hover{background:#e86a0e}
+header{background:linear-gradient(135deg,#0b1736,#1e3a8a 60%,#6d28d9);color:#fff;padding:70px 22px 50px;text-align:center}
+header small{letter-spacing:5px;font-weight:700;color:#ffb86b}header h1{font-size:clamp(38px,7vw,72px);line-height:1.05;margin:12px 0;font-family:Georgia,serif}
+.meta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:22px 0}.meta span{background:rgba(255,255,255,.12);border-radius:99px;padding:9px 20px;font-weight:600}
+.count{display:flex;gap:14px;justify-content:center;margin:24px 0}.count div{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 18px;min-width:78px}.count b{display:block;font-size:30px}.count small{letter-spacing:1px;color:#cdd8f5;font-weight:400}
+.sec{padding:64px 22px}.in{max-width:1100px;margin:auto}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}.sub{opacity:.75;margin-bottom:28px}
+.purpose{background:#fff8ec;font-family:Georgia,serif}.purpose h2{color:#9a3412}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.box{background:#fff;border-radius:16px;padding:24px;box-shadow:0 6px 22px rgba(0,0,0,.07)}.box h3{color:#9a3412;margin-bottom:6px}
+.speakers{background:#eef2ff}.speakers h2{color:#1e3a8a}
+.sp{background:#fff;border-radius:18px;padding:22px;text-align:center;box-shadow:0 6px 22px rgba(30,58,138,.1);transition:.2s}.sp:hover{transform:translateY(-5px)}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;color:#fff;font-size:34px;font-weight:700}
+.sp small{color:#64748b;display:block}.sp a{display:inline-block;margin-top:8px;color:#4f46e5;font-weight:600;text-decoration:none}
+.sched{background:#0f172a;color:#e2e8f0}.sched h2{color:#fbbf24}
+.tabs{display:flex;gap:8px;margin-bottom:18px}.tabs button{background:#1e293b;color:#e2e8f0;border:0;padding:10px 22px;border-radius:10px;font:600 15px "Segoe UI";cursor:pointer}.tabs button.on{background:#fbbf24;color:#111}
+.row{display:grid;grid-template-columns:130px 1fr 150px;gap:14px;padding:14px 18px;border-bottom:1px solid #1e293b;align-items:center}.row b{color:#fbbf24}.row em{color:#94a3b8;font-style:normal;font-size:14px}
+.venue{background:#ecfdf5}.venue h2{color:#065f46}
+.venue .box{border-left:6px solid #10b981}
+.reg{background:linear-gradient(135deg,#ff7a1a,#ec4899);color:#fff;text-align:center}
+.reg .btn{background:#0b1736;box-shadow:none}
+footer{background:#0b1736;color:#9fb0d9;padding:26px;text-align:center;font-size:14px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;place-items:center;z-index:50;padding:16px}.ov.on{display:grid}
+.modal{background:#fff;border-radius:18px;padding:28px;max-width:520px;width:100%;max-height:94vh;overflow:auto}
+form{display:grid;gap:12px;margin-top:14px}input,select{padding:12px;border:1px solid #cbd5e1;border-radius:8px;font:16px "Segoe UI";width:100%}
+.ok{background:#dcfce7;color:#166534;padding:14px;border-radius:10px;margin-top:12px}
+@media(max-width:700px){.row{grid-template-columns:1fr}.top a{display:none}}
+</style></head><body>
+<div class="top"><b>⚡ TECHSPARK 2026</b><div><a href="#purpose">Purpose</a><a href="#speakers">Speakers</a><a href="#schedule">Schedule</a><a href="#venue">Venue</a><button class="btn" style="padding:8px 18px;font-size:14px" onclick="openReg()">Register</button></div></div>
+<header><small>INNOVATE · CONNECT · BUILD</small><h1>TechSpark Summit 2026</h1><p style="max-width:640px;margin:auto;font-size:19px;opacity:.9">A two-day event where students, developers and startups meet industry leaders to explore AI, cloud and the future of technology.</p>
+<div class="meta"><span>📅 12–13 December 2026</span><span>📍 Grand Convention Centre, Bengaluru</span><span>🎟 Free for students</span></div>
+<div class="count" id="cd"></div><button class="btn" onclick="openReg()">Register now</button></header>
+
+<section class="sec purpose" id="purpose"><div class="in"><h2>Purpose of the event</h2><p class="sub">What it is for and who it is for</p>
+<div class="cols"><div class="box"><h3>🎯 Why we are here</h3><p>TechSpark brings classroom learning closer to industry practice through keynotes, hands-on workshops and a project showcase.</p></div><div class="box"><h3>🎓 Students</h3><p>Final-year and pre-final-year engineering and science students looking for skills, internships and mentors.</p></div><div class="box"><h3>👩‍💻 Developers &amp; professionals</h3><p>Early-career developers and tech professionals who want to upskill and network.</p></div><div class="box"><h3>🚀 Startups &amp; faculty</h3><p>Founders seeking visibility and faculty looking for industry collaboration.</p></div></div></div></section>
+
+<section class="sec speakers" id="speakers"><div class="in"><h2>Meet the speakers</h2><p class="sub">Click a name to visit the speaker’s profile (placeholder links)</p><div class="cols" id="sp"></div></div></section>
+
+<section class="sec sched" id="schedule"><div class="in"><h2>Event schedule</h2><p class="sub">Two days · three tracks</p><div class="tabs"><button class="on" onclick="day(1,this)">Day 1 – 12 Dec</button><button onclick="day(2,this)">Day 2 – 13 Dec</button></div><div id="sc"></div></div></section>
+
+<section class="sec venue" id="venue"><div class="in"><h2>Venue</h2><p class="sub">Easy to reach by metro and road</p><div class="box"><h3>Grand Convention Centre</h3><p>45 Tech Park Road, Whitefield, Bengaluru – 560066<br>Metro: Whitefield station (5 min walk) · Free parking for attendees</p><a class="btn" style="margin-top:8px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Convention+Centre+Whitefield+Bengaluru">📍 Open in Google Maps</a></div></div></section>
+
+<section class="sec reg" id="register"><div class="in"><h2>Be part of TechSpark</h2><p style="font-size:19px">Seats are limited. Reserve yours today.</p><button class="btn" onclick="openReg()">Register for the event</button><p id="cnt" style="margin-top:16px"></p></div></section>
+<footer>© 2026 TechSpark Summit · Internet Programming Lab · Experiment 29 · Demo page (registrations are saved in your browser only)</footer>
+<div class="ov" id="ov" onclick="if(event.target===this)this.classList.remove('on')"><div class="modal"><div style="display:flex;justify-content:space-between"><h2 style="font-size:26px">Event registration</h2><button onclick="ov.classList.remove('on')" style="border:0;background:#eee;border-radius:8px;padding:6px 12px;cursor:pointer">✕</button></div>
+<form id="f"><input required name="n" placeholder="Full name"><input required type="email" name="e" placeholder="Email"><input required type="tel" name="p" placeholder="Phone"><select name="c"><option>Student</option><option>Developer</option><option>Faculty</option><option>Startup</option></select><input required name="o" placeholder="College / organisation"><select name="d"><option>Both days</option><option>Day 1 only</option><option>Day 2 only</option></select><button class="btn">Submit registration</button></form><div id="msg"></div></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const S=[['Dr. Ananya Rao','AI Research Lead, Nimbus Labs','Keynote: The Road to Responsible AI','#6d28d9'],['Rahul Menon','CTO, CloudNest','Cloud-native at scale','#0ea5e9'],['Priya Sharma','Founder, GreenByte','From campus to startup','#16a34a'],['Karthik Iyer','Principal Engineer, DevForge','Building developer tools','#ea580c']];
+$('#sp').innerHTML=S.map(s=>`<div class="sp"><div class="av" style="background:${s[3]}">${s[0].split(' ').slice(-2).map(x=>x[0]).join('')}</div><h3>${s[0]}</h3><small>${s[1]}</small><p style="font-size:15px;margin:8px 0 0"><i>${s[2]}</i></p><a href="https://www.linkedin.com/" target="_blank" rel="noopener">View profile →</a></div>`).join('');
+const D={1:[['09:00 – 10:00','Registration & networking breakfast','Main foyer'],['10:00 – 11:00','Keynote: The Road to Responsible AI','Hall A · Dr. Ananya Rao'],['11:30 – 13:00','Workshop: Build an AI app in 90 minutes','Lab 1'],['14:00 – 15:00','Talk: Cloud-native at scale','Hall B · Rahul Menon'],['15:30 – 17:00','Student project showcase','Expo floor']],2:[['09:30 – 10:30','Talk: Building developer tools','Hall A · Karthik Iyer'],['11:00 – 12:00','Panel: Careers in tech','Hall A · All speakers'],['12:00 – 13:00','Lunch & startup stalls','Food court'],['14:00 – 15:00','Talk: From campus to startup','Hall B · Priya Sharma'],['15:30 – 16:30','Awards & closing ceremony','Hall A']]};
+function day(n,b){document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b&&b.classList.add('on');$('#sc').innerHTML=D[n].map(r=>`<div class="row"><b>${r[0]}</b><span>${r[1]}</span><em>${r[2]}</em></div>`).join('')}day(1);
+const T=new Date('2026-12-12T09:00:00+05:30');function tick(){let s=Math.max(0,Math.floor((T-Date.now())/1000));const v=[['DAYS',Math.floor(s/86400)],['HOURS',Math.floor(s/3600)%24],['MINS',Math.floor(s/60)%60],['SECS',s%60]];$('#cd').innerHTML=v.map(x=>`<div><b>${x[1]}</b><small>${x[0]}</small></div>`).join('')}tick();setInterval(tick,1000);
+const get=()=>{try{return JSON.parse(localStorage.getItem('e29reg')||'[]')}catch(e){return[]}};
+function cnt(){$('#cnt').textContent=get().length?get().length+' registration(s) saved in this browser':''}cnt();
+function openReg(){$('#msg').innerHTML='';$('#ov').classList.add('on')}
+$('#f').onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));d.id='TS-'+(1000+get().length+1);const l=get();l.push(d);try{localStorage.setItem('e29reg',JSON.stringify(l))}catch(x){}$('#msg').innerHTML=`<div class="ok">🎉 Thank you, ${d.n.replace(/</g,'')}! Your registration ID is <b>${d.id}</b>. A confirmation would be sent to ${d.e.replace(/</g,'')}.</div>`;e.target.reset();cnt()};
+</script></body></html>
