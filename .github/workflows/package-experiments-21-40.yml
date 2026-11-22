@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'lab programs/Experiments21-40/**'
+      - 'lab programs/**'
       - '.github/workflows/package-experiments-21-40.yml'
   workflow_dispatch:
 
@@ -17,18 +17,29 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Collect all experiments 21-40
+        run: |
+          set -e
+          mkdir -p /tmp/experiments21-40
+          # Include every standalone experiment page numbered 21 through 40
+          # from the original lab programs directory.
+          find "lab programs" -maxdepth 1 -type f -regextype posix-extended -regex '.*/Experiment_((2[1-9])|(3[0-9])|40)[^/]*\.html' -exec cp {} /tmp/experiments21-40/ \;
+          # Include the complete prepared folder (including its own index and README).
+          cp -R "lab programs/Experiments21-40/." /tmp/experiments21-40/
+          echo "ZIP will contain:"
+          find /tmp/experiments21-40 -maxdepth 1 -type f -printf '%f\n' | sort
+          count=$(find /tmp/experiments21-40 -maxdepth 1 -type f -name '*.html' | wc -l)
+          test "$count" -ge 20 || { echo "Expected at least 20 experiment HTML pages, found $count"; exit 1; }
       - name: Create ZIP archive
         run: |
-          cd "lab programs"
-          rm -f "Experiment-21 to 40.zip"
-          zip -r "Experiment-21 to 40.zip" "Experiments21-40"
-          cd ..
+          cd /tmp
+          zip -r "$GITHUB_WORKSPACE/lab programs/Experiment-21 to 40.zip" experiments21-40
       - name: Commit ZIP archive
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "lab programs/Experiment-21 to 40.zip"
           if ! git diff --cached --quiet; then
-            git commit -m "Package Experiments 21-40 as ZIP"
+            git commit -m "Fix complete Experiments 21-40 ZIP archive"
             git push
           fi
